@@ -1,25 +1,70 @@
+*
+{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
 body{
-    background: #fadede;
+    background: #0c192c;
 }
 
 .container{
     width: 800px;
     height: 400px;
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
+.bubbles {
+    position: relative;
+    display: flex;
+}
+.bubbles span {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #4fc3dc;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 100px #4fc3dc44,
+    0 0 50px #4fc3dc,
+    0 0 100px #4fc3dc;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(120s / var(--i));
+
+}
+.img{
+    position: relative;
+    bottom: 79px;
+}
+.img1{
+    position: absolute;
+    right: 15px;
+    top: 1px;
+   
+}
+
 
 h1{
     font-family: 'Sacramento', cursive;
     color: #FE7696;
     font-size: 34px;
 }
+h2{
+    font-family: 'Sacramento', cursive;
+    color: #FE7696;
+    font-size: 34px;
+}
+h3{
+    font-family: 'Sacramento', cursive;
+    color: #FE7696;
+    font-size: 34px;
+}
 
 .letter{
-    width: 600px;
-    height: 400px;
+    width: 400px;
+    height: 100px;
     display: inline-block;
 }
 
@@ -95,8 +140,8 @@ h1{
 }
 
 .stem{
-    width: 240px;
-    height: 40px;
+    width: 255px;
+    height: 70px;
     background: transparent;
     border: 8px solid #8ac78a;
     border-color: #77a377 transparent transparent transparent;
@@ -105,7 +150,7 @@ h1{
 }
 
 .leafs{
-    width: 50px;
+    width: 60px;
     height: 40px;
     border-radius: 0px 50%;
     background: #77a377;
@@ -116,7 +161,7 @@ h1{
 }
 
 .leafs:nth-child(2){
-    width: 40px;
+    width: 70px;
     height: 20px;
     top: 40px;
     left: 140px;
@@ -148,4 +193,22 @@ h1{
     100%{
         transform: rotate(0deg);
     }
+}
+.bubbles span:nth-child(even)
+{
+    background: #ff2d75;
+    box-shadow: 0 0 0 100px #ff2d75,
+    0 0 50px #ff2d75,
+    0 0 100px #ff2d75;
+}
+@keyframes animate
+{
+  0%
+  {
+    transform: translateY(100vh) scale(0);
+  }
+100%
+{
+    transform: translateY(-10vh) scale(1); 
+}
 }
